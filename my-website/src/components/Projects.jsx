@@ -11,15 +11,15 @@ const projects = [
     links: [
       {
         label: "GitHub",
-        href: "https://github.com/",
+        href: "https://github.com/mdpaizal/E-commerce-Project.git",
         style: "bg-black text-white",
         icon: <FaGithub />,
       },
-      {
-        label: "Notebook",
-        href: "#",
-        style: "bg-blue-600 text-white",
-      },
+      // {
+      //   label: "Notebook",
+      //   href: "#",
+      //   style: "bg-blue-600 text-white",
+      // },
     ],
   },
 ];

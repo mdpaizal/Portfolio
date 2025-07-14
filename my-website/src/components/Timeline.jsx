@@ -34,7 +34,7 @@ const timelineItems = [
     side: "left",
     date: "2020 – 2023",
     title: "Bachelor of Computer Science ",
-    subtitle: "Jamal Mohamed College(Autonomous),",
+    subtitle: "Jamal Mohamed College(Autonomous)",
     desc: "CGPA: 7.5/10",
     icon: <FaGraduationCap />,
   },
