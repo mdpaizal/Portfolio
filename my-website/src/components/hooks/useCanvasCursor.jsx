@@ -82,10 +82,16 @@ const useCanvasCursor = () => {
         lines.push(new Line({ spring: 0.4 + (e / E.trails) * 0.025 }));
     }
     function c(e) {
-      (e.touches
-        ? ((pos.x = e.touches[0].pageX), (pos.y = e.touches[0].pageY))
-        : ((pos.x = e.clientX), (pos.y = e.clientY)),
-        e.preventDefault());
+      if (e.touches) {
+        pos.x = e.touches[0].pageX;
+        pos.y = e.touches[0].pageY;
+      } else {
+        pos.x = e.clientX;
+        pos.y = e.clientY;
+      }
+      if (e.cancelable) {
+        e.preventDefault();
+      }
     }
     function l(e) {
       1 == e.touches.length &&
@@ -94,8 +100,8 @@ const useCanvasCursor = () => {
     (document.removeEventListener('mousemove', onMousemove),
       document.removeEventListener('touchstart', onMousemove),
       document.addEventListener('mousemove', c),
-      document.addEventListener('touchmove', c),
-      document.addEventListener('touchstart', l),
+      document.addEventListener('touchmove', c, { passive: false }),
+      document.addEventListener('touchstart', l, { passive: false }),
       c(e),
       o(),
       render());
@@ -149,7 +155,7 @@ const useCanvasCursor = () => {
       offset: 285,
     });
     document.addEventListener('mousemove', onMousemove);
-    document.addEventListener('touchstart', onMousemove);
+    document.addEventListener('touchstart', onMousemove, { passive: false });
     document.body.addEventListener('orientationchange', resizeCanvas);
     window.addEventListener('resize', resizeCanvas);
     window.addEventListener('focus', () => {
@@ -168,7 +174,7 @@ const useCanvasCursor = () => {
     return () => {
       ctx.running = false;
       document.removeEventListener('mousemove', onMousemove);
-      document.removeEventListener('touchstart', onMousemove);
+      document.removeEventListener('touchstart', onMousemove, { passive: false });
       document.body.removeEventListener('orientationchange', resizeCanvas);
       window.removeEventListener('resize', resizeCanvas);
       window.removeEventListener('focus', () => {
