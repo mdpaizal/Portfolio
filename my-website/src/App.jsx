@@ -24,7 +24,7 @@ function App() {
   };
 
   return (
-    <div className="bg-white text-gray-900 font-sans relative">
+    <div className="bg-white text-gray-900 overflow-y-scroll font-sans relaive">
       <Sparkles 
         className="fixed inset-0 w-full h-full z-0 pointer-events-none"
         color="#fbbf24"
