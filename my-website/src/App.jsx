@@ -12,21 +12,21 @@ import { GoArrowUp } from "react-icons/go";
 
 
 
-import CanvasCursor from "./components/CanvasCursor";
+// import CanvasCursor from "./components/CanvasCursor";
 import { Sparkles } from "./components/Librarys/Sparkle";
 import SmoothWavyCanvas from "./components/Librarys/SmoothWavyCanvas";
 function App() {
   
 
   return (
-    <div className="bg-white text-gray-900 overflow-y-scroll font-sans relaive">
+    <div className="bg-white text-gray-900 font-sans relative">
       <Sparkles 
         className="fixed inset-0 w-full h-full z-0 pointer-events-none"
         color="#fbbf24"
         density={50}
         size={1.5}
       />
-      <div className="relative z-50">
+      <div className="relative z-10">
         
         <Navbar />
         <Hero />
@@ -39,7 +39,7 @@ function App() {
       </div>
       
       {/* <CanvasCursor/> */}
-      <SmoothWavyCanvas className = "z-0"/>
+      <SmoothWavyCanvas className="fixed inset-0 w-full h-full z-0 pointer-events-none"/>
     </div>
   );
 }

@@ -6,7 +6,7 @@ const About = () => {
   return (
     <>
     <Sparkles 
-        className="absolute inset-0 !z-0 w-full h-full pointer-events-none"
+        className="absolute inset-0 z-0 w-full h-full pointer-events-none"
         color="#fbbf24"
         density={1000}
         size={2}
