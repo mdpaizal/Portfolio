@@ -1,9 +1,11 @@
 // src/components/Navbar.jsx
-import React from "react";
+import React, { useState } from "react";
 
 import ButtonCreativeRight from "./Librarys/Buttons";
+import { RiMenu4Line } from "react-icons/ri";
 
 const Navbar = () => {
+  const [visible,setvisible]=useState(false)
   const handleSmoothScroll = (e, targetId) => {
     e.preventDefault();
     const element = document.getElementById(targetId);
@@ -55,7 +57,31 @@ const Navbar = () => {
           <li><a href="#timeline" onClick={(e) => handleSmoothScroll(e, 'timeline')} className="hover:text-yellow-500 text-xl transition"><ButtonCreativeRight name="Timeline"/></a></li>
           <li><a href="#contact" onClick={(e) => handleSmoothScroll(e, 'contact')} className="hover:text-yellow-500 text-xl transition"><ButtonCreativeRight name="Contact"/></a></li>
         </ul>
+
+        <button className="md:hidden flex" onClick={()=>setvisible(!visible)}>
+          <RiMenu4Line size={27}/>
+        </button>
       </div>
+      
+      {visible && (
+        <div className="fixed inset-0 bg-yellow-500 z-40 md:hidden">
+          <div className="flex justify-between items-center p-4">
+            <h1 className="text-2xl font-bold">md_paizall</h1>
+            <button onClick={()=>setvisible(false)}>
+              <RiMenu4Line size={27}/>
+            </button>
+          </div>
+          <ul className="flex flex-col space-y-6 items-center justify-center h-full pb-20">
+            <li><a href="#home" onClick={(e) => {handleSmoothScroll(e, 'home'); setvisible(false);}} className="hover:text-white text-xl transition"><ButtonCreativeRight name="Home"/></a></li>
+            <li><a href="#about" onClick={(e) => {handleSmoothScroll(e, 'about'); setvisible(false);}} className="hover:text-white text-xl transition"><ButtonCreativeRight name="About"/></a></li>
+            <li><a href="#skills" onClick={(e) => {handleSmoothScroll(e, 'skills'); setvisible(false);}} className="hover:text-white text-xl transition"><ButtonCreativeRight name="Skill"/></a></li>
+            <li><a href="#timeline" onClick={(e) => {handleSmoothScroll(e, 'timeline'); setvisible(false);}} className="hover:text-white text-xl transition"><ButtonCreativeRight name="Timeline"/></a></li>
+            <li><a href="#contact" onClick={(e) => {handleSmoothScroll(e, 'contact'); setvisible(false);}} className="hover:text-white text-xl transition"><ButtonCreativeRight name="Contact"/></a></li>
+          </ul>
+        </div>
+      )}
+      
+
     </nav>
   );
 };
