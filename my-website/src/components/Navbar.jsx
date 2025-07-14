@@ -8,22 +8,38 @@ const Navbar = () => {
     e.preventDefault();
     const element = document.getElementById(targetId);
     if (element) {
-      // For mobile devices, use a more compatible approach
-      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const elementPosition = element.offsetTop;
+      const offsetPosition = elementPosition - 80;
       
-      if (isMobile) {
-        const elementPosition = element.offsetTop;
-        const offsetPosition = elementPosition - 80; // Account for fixed navbar
-        
+      // Try modern smooth scroll first
+      try {
         window.scrollTo({
           top: offsetPosition,
           behavior: 'smooth'
         });
-      } else {
-        element.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+      } catch (error) {
+        // Fallback for older mobile browsers
+        const start = window.pageYOffset;
+        const distance = offsetPosition - start;
+        const duration = 800;
+        let startTime = null;
+        
+        function animation(currentTime) {
+          if (startTime === null) startTime = currentTime;
+          const timeElapsed = currentTime - startTime;
+          const run = ease(timeElapsed, start, distance, duration);
+          window.scrollTo(0, run);
+          if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+        
+        function ease(t, b, c, d) {
+          t /= d / 2;
+          if (t < 1) return c / 2 * t * t + b;
+          t--;
+          return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+        
+        requestAnimationFrame(animation);
       }
     }
   };
