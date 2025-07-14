@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* NeonCursor.css */
+
+.neon-cursor-container {
+  pointer-events: none; /* Cursor should not block clicks */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.cursor-main,
+.cursor-trail,
+.cursor-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* Main small dot */
+.cursor-main {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 102, 0, 0.9);
+  box-shadow: 0 0 6px rgba(255, 102, 0, 0.9), 0 0 12px rgba(255, 102, 0, 0.6);
+}
+
+/* Trail */
+.cursor-trail {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgb(236, 101, 23);
+  background-color: transparent;
+  box-shadow: 0 0 8px rgba(236, 101, 23, 0.6);
+  transition: border-color 0.2s, border-width 0.2s;
+}
+
+/* Glow */
+.cursor-glow {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.3) 0%, rgba(255, 140, 0, 0) 70%);
+  opacity: 0.4;
+  transition: opacity 0.2s;
+}
