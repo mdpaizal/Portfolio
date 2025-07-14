@@ -32,7 +32,7 @@ function App() {
         size={1.5}
       />
       <div className="relative z-50">
-        <div className="fixed bottom-10 h-10 w-10 right-10 flex justify-center rounded-full items-center bg-yellow-500 cursor-pointer" onClick={scrollToTop}> <GoArrowUp size={31} className="text-bold" /></div>
+        {/* <div className="fixed bottom-10 h-10 w-10 right-10 flex justify-center rounded-full items-center bg-yellow-500 cursor-pointer" onClick={scrollToTop}> <GoArrowUp size={31} className="text-bold" /></div> */}
         <Navbar />
         <Hero />
         <About />
