@@ -13,7 +13,7 @@ const Hero = () => {
         <a href="/MP-CV.pdf"
         download
         >
-          <ButtonHoverRight/>
+          {/* <ButtonHoverRight/> */}
         </a>
       </div>
       <div className="md:w-1/2 mt-8 md:mt-0">
