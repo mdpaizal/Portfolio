@@ -6,9 +6,26 @@ import ButtonCreativeRight from "./Librarys/Buttons";
 const Navbar = () => {
   const handleSmoothScroll = (e, targetId) => {
     e.preventDefault();
-    document.getElementById(targetId)?.scrollIntoView({
-      behavior: 'smooth'
-    });
+    const element = document.getElementById(targetId);
+    if (element) {
+      // For mobile devices, use a more compatible approach
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      
+      if (isMobile) {
+        const elementPosition = element.offsetTop;
+        const offsetPosition = elementPosition - 80; // Account for fixed navbar
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      } else {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
   };
 
   return (
