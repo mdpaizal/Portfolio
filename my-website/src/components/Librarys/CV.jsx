@@ -1,8 +1,8 @@
 const ButtonHoverRight = () => {
   return (
     <>
-      <button className="group relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-yellow-500 font-medium text-neutral-200 border-2 border-yellow-600 transition-all duration-300 hover:w-36">
-        <div className="inline-flex whitespace-nowrap opacity-0 transition-all duration-200 group-hover:-translate-x-3 group-hover:opacity-100">
+      <button className="group relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-yellow-500 font-medium text-neutral-200 border-2 border-yellow-600 transition-all duration-300 hover:w-36 active:w-36 md:hover:w-36">
+        <div className="inline-flex whitespace-nowrap opacity-0 transition-all duration-200 group-hover:-translate-x-3 group-hover:opacity-100 group-active:-translate-x-3 group-active:opacity-100">
           Download CV
         </div>
         <div className="absolute right-3.5">
