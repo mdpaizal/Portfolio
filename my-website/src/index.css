@@ -60,3 +60,208 @@ html {
   opacity: 0.4;
   transition: opacity 0.2s;
 }
+
+/* Hero Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out;
+}
+
+.animate-fade-in-right {
+  animation: fade-in-right 0.8s ease-out;
+}
+
+.animate-gradient-x {
+  animation: gradient-x 3s ease infinite;
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+.animate-wave {
+  animation: wave 2s ease-in-out infinite;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* Skills Animations */
+@keyframes skill-appear {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(180deg);
+  }
+}
+
+.animate-skill-appear {
+  animation: skill-appear 0.6s ease-out;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 8s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Timeline Animations */
+@keyframes timeline-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes timeline-icon-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-timeline-slide-in {
+  animation: timeline-slide-in 0.8s ease-out;
+}
+
+.animate-timeline-icon-pop {
+  animation: timeline-icon-pop 0.6s ease-out;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
+}
+
+/* Footer Animations */
+@keyframes footer-icon-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes footer-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+  }
+}
+
+.animate-footer-icon-bounce {
+  animation: footer-icon-bounce 2s ease-in-out infinite;
+}
+
+.animate-footer-glow {
+  animation: footer-glow 2s ease-in-out infinite;
+}
