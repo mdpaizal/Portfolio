@@ -39,7 +39,6 @@ function App() {
       </div>
       
       {/* <CanvasCursor/> */}
-      <SmoothWavyCanvas className="fixed inset-0 w-full h-full z-0 pointer-events-none"/>
     </div>
   );
 }

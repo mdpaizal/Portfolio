@@ -19,26 +19,23 @@ const Hero = () => {
   }, [currentIndex, fullText]);
 
   return (
-    <section id="home" className="pt-24 pb-12 px-4 flex flex-col md:flex-row items-center max-w-7xl mx-auto relative overflow-hidden min-h-screen md:min-h-0">
-      {/* Floating Elements - Hidden on mobile */}
-      <div className="hidden md:block absolute top-10 left-10 w-20 h-20 bg-yellow-400 rounded-full opacity-20 animate-bounce"></div>
-      <div className="hidden md:block absolute top-32 right-20 w-16 h-16 bg-blue-400 rounded-full opacity-20 animate-pulse"></div>
-      <div className="hidden md:block absolute bottom-20 left-32 w-12 h-12 bg-green-400 rounded-full opacity-20 animate-ping"></div>
+    <section id="home" className="pt-24 pb-12 px-4 flex flex-col md:flex-row items-center max-w-7xl mx-auto min-h-screen md:min-h-0">
       
-      <div className="md:w-1/2 text-center md:text-left space-y-4 md:space-y-6 animate-fade-in-up">
+      {/* Removed advanced background animations */}
+      
+      <div className="md:w-1/2 text-center md:text-left space-y-4 md:space-y-6">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-          <span className="inline-block animate-wave text-2xl sm:text-3xl">👋</span> Hi, I'm
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 animate-gradient-x text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+          <span className="inline-block text-2xl sm:text-3xl">👋</span> Hi, I'm
+          <span className="block text-yellow-600 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
             {displayText}
-            <span className="animate-blink">|</span>
           </span>
         </h2>
         
-        <p className="text-base sm:text-lg text-gray-600 animate-fade-in-up animation-delay-300 transform hover:scale-105 transition-transform duration-300 px-2 md:px-0">
+        <p className="text-base sm:text-lg text-gray-600 px-2 md:px-0">
           A passionate <span className="text-yellow-500 font-semibold">FullStack Developer</span> creating interactive and scalable web applications.
         </p>
         
-        <div className="animate-fade-in-up animation-delay-500 flex justify-center md:justify-start">
+        <div className="flex justify-center md:justify-start">
           <ButtonHoverRight />
         </div>
       </div>
@@ -47,7 +44,7 @@ const Hero = () => {
         <img 
           src={profilePic} 
           alt="Profile" 
-          className="rounded-full w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 mx-auto shadow-lg" 
+          className="rounded-full w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 mx-auto" 
         />
       </div>
     </section>

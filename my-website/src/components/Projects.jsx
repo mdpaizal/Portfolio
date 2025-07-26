@@ -32,7 +32,7 @@ const Projects = () => {
       <h2 className="text-xl font-bold text-center mb-2">Explore My</h2>
       <h3 className="text-4xl text-yellow-500 font-extrabold text-center mb-12">Projects</h3>
 
-      {/* Centering Wrapper */}
+      
       <div className="flex justify-center">
         <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all max-w-md w-full">
           <div className="h-60 mb-4 flex items-center overflow-hidden justify-center">
